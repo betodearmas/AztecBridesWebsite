@@ -13,42 +13,45 @@
       color: #ffffff;
     }
 
-    .profile-container {
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .profile {
-      display: flex;
-      max-width: 800px;
-      margin: 0;
-    }
-
-    .profile img {
-      padding: 0px;
+    #JOEIMAGE1 {
+      position: absolute;
+      left: 10px;
+      top: 10px;
       width: 75vw;
-      justify-content: left;
+      height: auto;
+      min-width: 100px;
+      min-height:auto;
+      max-width: 2000px;
+      max-height: auto;
+      
     }
 
     .profile-content {
-      flex: 1;
-      padding: 20px;
-      text-align: left;
+      position: relative;
+      top: -60px;
+      margin-left: 77vw;
+      margin-right: 0;
+      width: 21.5%;
+      justify-content: left;
     }
 
     h1 {
       font-family:'Bebas Neue';
       color: #FFDE59;
-      margin-bottom: 20px;
-      text-align:left;
+      font-size: 5vw;
+      margin-top: 63px;
     }
 
     p {
-      width: 20vw; 
-      margin: 0 auto;
-      font-size: 18px;
-      margin-bottom: 20px;
+      margin-top: 0;
+      text-align: justify;
+      font-size: 1.5vw;
+      font-family: 'American Typewriter';
+      font-weight: 10;
+      font-style: normal;
+      font-size: 1.5vw;
+      line-height: 1.2;
+      white-space: wrap;
     }
 
     .back-button {
@@ -145,26 +148,54 @@
       }
     }
 
+    @media screen and (max-width: 768px) 
+    {
+      #JOEIMAGE1 {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      left: 0px;
+      top: 0px;
+      }
+
+      .profile-content {
+      position: absolute;
+      margin-left: 10px;
+      margin-top: 68vw;
+      width: 95%;
+      }
+
+      h1{
+        font-size: 10vw;
+      }
+
+      p {
+        font-size: 5.5vw;
+      }
+
+      .back-button {
+        position: fixed;
+        right: 20px;
+        bottom: 15px;
+      }
+    }
+    
+
+
   </style>
 </head>
 <body>
 
-<div class="profile-container">
-  <div class="profile">
-    <img src="Images/JOE1.jpg" alt="Band Member Image">
-    <div class="profile-content">
+<img id=JOEIMAGE1 src="Images/JOE1.jpg" alt="Band Member Image">
+
+<div class="profile-content">
       <h1>JOE FRY</h1>
-      <p>Introducing Joe Fry, the smooth heartbeat of Aztec Brides and their masterful bass player, delectably accompanying Beto's hypnotizing guitar riffs. His musical prowess extends beyond the stage, contributing to the band's collaborative songwriting process. With a deep passion for groove and a soulful connection to the instrument, Joe Fry brings a vibrant energy that defines Aztec Brides' unique musical identity.</p>
-    </div>
-  </div>
-  <a href="#" class="back-button" onclick="goBack()">GO BACK</a>
+      <p>Papa Joe is originally from London and has been playing on the Tokyo music scene since 2014. Joe is part human and part mega-biodiverse mushroom seed bank, and enjoys marathon running, alliteration and liminal spaces. If you think his bass playing sucks, just wait til you hear his drumming. Stay toxic.</p>
 </div>
 
-<script>
-  function goBack() {
-    window.history.back();
-  }
-</script>
+<div>
+  <a href="AZBHOME.html" class="back-button">GO HOME</a>
+</div>
 
 </body>
 </html>

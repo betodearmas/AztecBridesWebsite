@@ -13,39 +13,45 @@
       color: #ffffff;
     }
 
-    .profile-container {
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .profile {
-      display: flex;
-      max-width: 800px;
-      margin: 0;
-    }
-
-    .profile img {
-      padding: 0px;
+    #BETOIMAGE1 {
+      position: absolute;
+      left: 10px;
+      top: 10px;
       width: 75vw;
-      justify-content: left;
+      height: auto;
+      min-width: 100px;
+      min-height:auto;
+      max-width: 2000px;
+      max-height: auto;
+      
     }
 
     .profile-content {
-      flex: 1;
-      padding: 20px;
-      text-align: left;
+      position: relative;
+      top: -60px;
+      margin-left: 77vw;
+      margin-right: 0;
+      width: 21.5%;
+      justify-content: left;
     }
 
     h1 {
       font-family:'Bebas Neue';
       color: #FFDE59;
-      margin-bottom: 20px;
+      font-size: 5vw;
+      margin-top: 63px;
     }
 
     p {
-      font-size: 18px;
-      margin-bottom: 20px;
+      margin-top: 0;
+      text-align: justify;
+      font-size: 1.5vw;
+      font-family: 'American Typewriter';
+      font-weight: 10;
+      font-style: normal;
+      font-size: 1.5vw;
+      line-height: 1.2;
+      white-space: wrap;
     }
 
     .back-button {
@@ -63,7 +69,7 @@
       position: absolute;
       cursor: pointer;
       bottom: 20px;
-      right: 20px;
+      right:20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -142,26 +148,53 @@
       }
     }
 
+    @media screen and (max-width: 768px) 
+    {
+      #BETOIMAGE1 {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      left: 0px;
+      top: 0px;
+      }
+
+      .profile-content {
+      position: absolute;
+      margin-left: 10px;
+      margin-top: 68vw;
+      width: 95%;
+      }
+
+      h1{
+        font-size: 10vw;
+      }
+
+      p {
+        font-size: 5.5vw;
+      }
+
+      .back-button {
+        position: fixed;
+        right: 20px;
+        bottom: 15px;
+      }
+    }
+
+
   </style>
 </head>
 <body>
 
-<div class="profile-container">
-  <div class="profile">
-    <img src="Images/BETO1.jpg" alt="Band Member Image">
-    <div class="profile-content">
+<img id=BETOIMAGE1 src="Images/BETO1.jpg" alt="Band Member Image">
+
+<div class="profile-content">
       <h1>BETO DE ARMAS</h1>
-      <p>Background information about the band member goes here. You can include details about their role in the band, musical influences, and other interesting facts.</p>
-    </div>
-  </div>
-  <a href="#" class="back-button" onclick="goBack()">GO BACK</a>
+      <p>Over the top lovable fool funkadelic cosmic soul brotha. Hyper self-aware, hyper doesn't care. A tasty jam is the epitome of happiness for Beto. He loves red wine, debating ancient history, aliens, Graham Hancock et.al, shredding the gnar, and has a soft spot for underdogs.</p>
 </div>
 
-<script>
-  function goBack() {
-    window.history.back();
-  }
-</script>
+<div>
+  <a href="AZBHOME.html" class="back-button">GO HOME</a>
+</div>
 
 </body>
 </html>
