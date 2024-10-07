@@ -1,41 +1,46 @@
 //HAM MENU
+// Open and close the hamburger menu
 const hamMenu = document.querySelector('.ham-menu');
-
 const offScreenMenu = document.querySelector('.off-screen-menu');
+const subMenuLinks = document.querySelectorAll('.sub-menu-toggle');
 
-hamMenu.addEventListener('click', ()=>{
+hamMenu.addEventListener('click', (e) => {
+    e.stopPropagation();  // Prevent the document click event from firing
     hamMenu.classList.toggle('active');
-    offScreenMenu.classList.toggle('active')
-})
+    offScreenMenu.classList.toggle('active');
+});
 
-document.addEventListener('DOMContentLoaded', function () {
-    var subMenuToggles = document.querySelectorAll('.sub-menu-toggle');
+// Open sub-menu for "Socials" without closing the main menu
+subMenuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();  // Prevent this click from closing the main menu
 
-    subMenuToggles.forEach(function (toggle) {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            var subMenu = this.nextElementSibling;
-            if (subMenu.style.display === 'block') {
-                subMenu.style.display = 'none';
-                this.classList.remove('active');
-            } else {
-                subMenu.style.display = 'block';
-                this.classList.add('active');
-            }
-        });
+        const subMenu = link.nextElementSibling;
+        
+        // Toggle the sub-menu visibility
+        if (subMenu.style.display === 'block') {
+            subMenu.style.display = 'none';
+        } else {
+            subMenu.style.display = 'block';
+        }
     });
 });
 
-
-// Close the menu when clicking outside
+// Close the menu when clicking outside the menu
 document.addEventListener('click', (e) => {
-    if (!hamMenu.contains(e.target) && offScreenMenu.classList.contains('active')) {
+    if (!hamMenu.contains(e.target) && !offScreenMenu.contains(e.target)) {
         hamMenu.classList.remove('active');
         offScreenMenu.classList.remove('active');
-        menuToggle.checked = false; // Reset the checkbox to unchecked state
+        // Hide any open sub-menus
+        subMenuLinks.forEach(link => {
+            const subMenu = link.nextElementSibling;
+            if (subMenu) {
+                subMenu.style.display = 'none';
+            }
+        });
     }
 });
-
 
 //BACKGROUND MUSIC - HOME
 const playlist = [
